@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
+  </head>
+  <body>
+    <script>
+      (async () => {
+        try {
+            // Import the main module dynamically
+            const { Main } = await import("./js/main.js");
+         
+            console.log(Main);
+
+            Main(window); // call Main, passing window scoep
+        } catch (err) {
+            console.error("Failed to load main.js: ", err);
+        }
+      })();
+    </script>
+  </body>
+</html>
